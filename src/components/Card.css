@@ -1,9 +1,11 @@
 .main-card {
-  background: #213145;
+  /* background: #21314554; */
+  /* background: url(https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg); */
   border: 2px solid rgb(71, 71, 71);
   border-radius: 15px;
   height: 400px;
   color: white;
   padding: 20px;
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  margin: 15px 0px;
 }
