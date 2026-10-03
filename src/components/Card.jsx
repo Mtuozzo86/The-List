@@ -1,18 +1,19 @@
 import './Card.css';
 
-function Card({ title, poster }) {
+function Card({ title, poster, id, handleSelected }) {
+  function handleClick() {
+    handleSelected(id);
+  }
+
   return (
     <div
+      onClick={handleClick}
       className="main-card"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${poster}`,
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width: '100%',
       }}
     >
-      <h3>{title}</h3>
+      {/* <h3>{title}</h3> */}
     </div>
   );
 }

@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -16,4 +16,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 1200px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  font-family: 'poppins';
+  padding-bottom: 50px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }

@@ -1,12 +1,22 @@
-import React, { useEffect, useEffectEvent, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import Card from './components/Card';
 import Home from './pages/Home';
+import MediaDetails from './components/MediaDetails';
 
 function App() {
-  const [movies, setMovies] = useState(['']);
-  console.log('state result: ', movies);
+  const [trendingMovies, setTrendingMovies] = useState(['']);
+  const [selectedMedia, setSelectedMedia] = useState('');
+
+  const trendingMoviesHome = trendingMovies.map((movie) => (
+    <Card
+      title={movie.title}
+      poster={movie.poster_path}
+      id={movie.id}
+      handleSelected={setSelectedMedia}
+    />
+  ));
 
   useEffect(() => {
     fetch('https://api.themoviedb.org/3/movie/top_rated', {
@@ -16,16 +26,18 @@ function App() {
       },
     })
       .then((response) => response.json())
-      .then((data) => setMovies(data.results))
+      .then((data) => setTrendingMovies(data.results))
       .catch((error) => console.log('no fetch', error));
   }, []);
 
   return (
     <div className="main">
       <Home />
-      {movies.map((movie) => (
-        <Card title={movie.title} poster={movie.poster_path} />
-      ))}
+      {selectedMedia !== '' ? (
+        <MediaDetails id={selectedMedia} handleBack={setSelectedMedia} />
+      ) : (
+        <div className="cards-container">{trendingMoviesHome}</div>
+      )}
     </div>
   );
 }
