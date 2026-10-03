@@ -1,5 +1,5 @@
 # React + Vite
-
+https://chatgpt.com/share/6ac0f0d4-9f84-83e9-bac3-b3c01ae7c488
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

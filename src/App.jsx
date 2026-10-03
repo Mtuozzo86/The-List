@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
 import './App.css';
-import Card from './components/Card';
 import Home from './pages/Home';
+import CardsList from './components/CardsList';
 import MediaDetails from './components/MediaDetails';
+import { bearerToken } from './services/api';
 
 function App() {
   const [trendingMovies, setTrendingMovies] = useState(['']);
-  const [selectedMedia, setSelectedMedia] = useState('');
+  const [selectedMedia, setSelectedMedia] = useState(null);
+  console.log(selectedMedia);
 
-  const trendingMoviesHome = trendingMovies.map((movie) => (
-    <Card
-      title={movie.title}
-      poster={movie.poster_path}
-      id={movie.id}
-      handleSelected={setSelectedMedia}
-    />
-  ));
+  const findSelectedMovie = trendingMovies.find(
+    (movie) => movie.id === selectedMedia,
+  );
+
+  console.log('findSelectedMovie:', findSelectedMovie);
 
   useEffect(() => {
     fetch('https://api.themoviedb.org/3/movie/top_rated', {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNGRhMGRmMjczYWEzYmQ0YzM1OWE4MmQwMWZkMDEyYSIsIm5iZiI6MTc5MDg4NTY5NS4wMjQsInN1YiI6IjZhYmViZjNmNWQ5MzYwYjYzNjNiYjBiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.g4K6LAkbh-pGQNM3rK7dnfE7KHQDf9-GVGcMftDLP5I`,
-        accept: 'application/json',
+        Authorization: bearerToken,
       },
     })
       .then((response) => response.json())
@@ -34,9 +32,13 @@ function App() {
     <div className="main">
       <Home />
       {selectedMedia !== '' ? (
-        <MediaDetails id={selectedMedia} handleBack={setSelectedMedia} />
+        <MediaDetails
+          // id={selectedMedia}
+          handleBack={setSelectedMedia}
+          movie={findSelectedMovie}
+        />
       ) : (
-        <div className="cards-container">{trendingMoviesHome}</div>
+        <CardsList movies={trendingMovies} handleSelected={setSelectedMedia} />
       )}
     </div>
   );

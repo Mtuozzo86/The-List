@@ -1,0 +1,4 @@
+export const bearerToken =
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNGRhMGRmMjczYWEzYmQ0YzM1OWE4MmQwMWZkMDEyYSIsIm5iZiI6MTc5MDg4NTY5NS4wMjQsInN1YiI6IjZhYmViZjNmNWQ5MzYwYjYzNjNiYjBiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.g4K6LAkbh-pGQNM3rK7dnfE7KHQDf9-GVGcMftDLP5I';
+
+const topRatedUrl = 'https://api.themoviedb.org/3/movie/top_rated';
