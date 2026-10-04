@@ -10,6 +10,7 @@ function App() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [fullDetails, setFullDetails] = useState(false);
+  console.log(fullDetails);
 
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
@@ -34,6 +35,7 @@ function App() {
           handleBack={setSelectedMedia}
           movie={findSelectedMovie}
           fullDetails={fullDetails}
+          handleFullDetails={setFullDetails}
         />
       ) : (
         <CardsList

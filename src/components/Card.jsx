@@ -9,8 +9,10 @@ function Card({
   fullDetails,
 }) {
   function handleClick() {
-    handleSelected(id);
-    handleFullDetails(true);
+    if (fullDetails === false) {
+      handleFullDetails(true);
+      handleSelected(id);
+    }
   }
   return (
     <div

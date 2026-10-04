@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import Card from './Card';
 import './Card.css';
 
-function MediaDetails({ movie, handleBack, fullDetails }) {
+function MediaDetails({ movie, handleBack, fullDetails, handleFullDetails }) {
   console.log(fullDetails);
   function handleGoBack() {
+    handleFullDetails(false);
     handleBack(null);
   }
   return (
