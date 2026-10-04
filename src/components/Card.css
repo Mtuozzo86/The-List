@@ -20,6 +20,6 @@
   transform: scale(1.1);
 }
 
-.main-card_details {
-  transform: unset;
+.main-card_details:hover {
+  transform: none;
 }

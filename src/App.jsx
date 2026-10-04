@@ -9,11 +9,11 @@ import { bearerToken } from './services/api';
 function App() {
   const [trendingMovies, setTrendingMovies] = useState(['']);
   const [selectedMedia, setSelectedMedia] = useState(null);
+  const [fullDetails, setFullDetails] = useState(false);
+
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
   );
-
-  console.log('findSelectedMovie:', findSelectedMovie);
 
   useEffect(() => {
     fetch('https://api.themoviedb.org/3/movie/top_rated', {
@@ -31,12 +31,16 @@ function App() {
       <Home />
       {selectedMedia !== null ? (
         <MediaDetails
-          // id={selectedMedia}
           handleBack={setSelectedMedia}
           movie={findSelectedMovie}
+          fullDetails={fullDetails}
         />
       ) : (
-        <CardsList movies={trendingMovies} handleSelected={setSelectedMedia} />
+        <CardsList
+          movies={trendingMovies}
+          handleSelected={setSelectedMedia}
+          handleFullDetails={setFullDetails}
+        />
       )}
     </div>
   );
