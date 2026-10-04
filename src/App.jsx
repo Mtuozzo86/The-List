@@ -9,8 +9,6 @@ import { bearerToken } from './services/api';
 function App() {
   const [trendingMovies, setTrendingMovies] = useState(['']);
   const [selectedMedia, setSelectedMedia] = useState(null);
-  console.log(selectedMedia);
-
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
   );
@@ -31,7 +29,7 @@ function App() {
   return (
     <div className="main">
       <Home />
-      {selectedMedia !== '' ? (
+      {selectedMedia !== null ? (
         <MediaDetails
           // id={selectedMedia}
           handleBack={setSelectedMedia}

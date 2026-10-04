@@ -19,3 +19,7 @@
   /* transition: all 0.2s; */
   transform: scale(1.1);
 }
+
+.main-card_details {
+  transform: unset;
+}

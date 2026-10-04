@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Card from './Card';
+import './Card.css';
 
 function MediaDetails({ movie, handleBack }) {
   return (
-    <>
+    <div className="main-card_details">
       <Card poster={movie.poster_path} />
       <h3>{movie.title}</h3>
-      <button onClick={() => handleBack('')}>back</button>
-    </>
+      <button onClick={() => handleBack(null)}>back</button>
+    </div>
   );
 }
 
