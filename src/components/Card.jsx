@@ -7,13 +7,11 @@ function Card({
   handleSelected,
   handleFullDetails,
   fullDetails,
-  key,
 }) {
   function handleClick() {
     handleSelected(id);
     handleFullDetails(true);
   }
-  console.log('key prop', key, 'movie id prop:', id);
   return (
     <div
       onClick={handleClick}

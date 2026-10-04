@@ -7,7 +7,7 @@ import MediaDetails from './components/MediaDetails';
 import { bearerToken } from './services/api';
 
 function App() {
-  const [trendingMovies, setTrendingMovies] = useState(['']);
+  const [trendingMovies, setTrendingMovies] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [fullDetails, setFullDetails] = useState(false);
 
