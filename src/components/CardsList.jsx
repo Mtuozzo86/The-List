@@ -12,11 +12,7 @@ function CardsList({ movies, handleSelected, handleFullDetails, fullDetails }) {
       key={movie.id}
     />
   ));
-  return (
-    <>
-      <div className="cards-container">{trendingMoviesHome}</div>
-    </>
-  );
+  return <div className="cards-container">{trendingMoviesHome}</div>;
 }
 
 export default CardsList;
