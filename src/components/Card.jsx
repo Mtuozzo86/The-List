@@ -12,11 +12,12 @@ function Card({
     handleSelected(id);
     handleFullDetails(true);
   }
-  console.log('within card component checking full details: ', fullDetails);
   return (
     <div
       onClick={handleClick}
-      className={fullDetails ? 'main-card' : ''}
+      className={
+        !fullDetails ? 'main-card' : 'main-card main-card_details-hover'
+      }
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${poster}`,
       }}

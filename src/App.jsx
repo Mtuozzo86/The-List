@@ -40,6 +40,7 @@ function App() {
           movies={trendingMovies}
           handleSelected={setSelectedMedia}
           handleFullDetails={setFullDetails}
+          fullDetails={fullDetails}
         />
       )}
     </div>

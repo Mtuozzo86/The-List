@@ -1,6 +1,6 @@
 import Card from './Card';
 
-function CardsList({ movies, handleSelected, handleFullDetails }) {
+function CardsList({ movies, handleSelected, handleFullDetails, fullDetails }) {
   const trendingMoviesHome = movies.map((movie) => (
     <Card
       title={movie.title}
@@ -8,6 +8,8 @@ function CardsList({ movies, handleSelected, handleFullDetails }) {
       id={movie.id}
       handleSelected={handleSelected}
       handleFullDetails={handleFullDetails}
+      fullDetails={fullDetails}
+      key={movie.id}
     />
   ));
   return (
