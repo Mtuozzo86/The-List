@@ -1,0 +1,35 @@
+.movie-details-container {
+  padding: 0px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.columns {
+  width: 100%;
+}
+
+.release-date {
+  font-size: 10px;
+  margin-bottom: 35px;
+}
+
+.overview {
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+button {
+  padding: 12px 30px 12px 30px;
+  border-radius: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 46, 92, 1) 0%,
+    rgba(0, 82, 79, 1) 100%
+  );
+  border: none;
+  color: white;
+}

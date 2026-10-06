@@ -10,7 +10,6 @@ function App() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [fullDetails, setFullDetails] = useState(false);
-  console.log(fullDetails);
 
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
@@ -29,7 +28,6 @@ function App() {
 
   return (
     <div className="main">
-      <Home />
       {selectedMedia !== null ? (
         <MediaDetails
           handleBack={setSelectedMedia}
@@ -38,12 +36,15 @@ function App() {
           handleFullDetails={setFullDetails}
         />
       ) : (
-        <CardsList
-          movies={trendingMovies}
-          handleSelected={setSelectedMedia}
-          handleFullDetails={setFullDetails}
-          fullDetails={fullDetails}
-        />
+        <>
+          <Home />
+          <CardsList
+            movies={trendingMovies}
+            handleSelected={setSelectedMedia}
+            handleFullDetails={setFullDetails}
+            fullDetails={fullDetails}
+          />
+        </>
       )}
     </div>
   );
