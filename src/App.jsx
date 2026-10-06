@@ -10,7 +10,7 @@ function App() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [fullDetails, setFullDetails] = useState(false);
-
+console.log('testing from work: ', trendingMovies)
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
   );
