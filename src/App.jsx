@@ -4,26 +4,19 @@ import './App.css';
 import Home from './pages/Home';
 import CardsList from './components/CardsList';
 import MediaDetails from './components/MediaDetails';
-import { bearerToken } from './services/api';
+import { bearerToken, getTrendingMovies } from './services/api';
 
 function App() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [fullDetails, setFullDetails] = useState(false);
-console.log('testing from work: ', trendingMovies)
+
   const findSelectedMovie = trendingMovies.find(
     (movie) => movie.id === selectedMedia,
   );
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/top_rated', {
-      headers: {
-        Authorization: bearerToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setTrendingMovies(data.results))
-      .catch((error) => console.log('no fetch', error));
+    getTrendingMovies().then((data) => setTrendingMovies(data.results));
   }, []);
 
   return (
