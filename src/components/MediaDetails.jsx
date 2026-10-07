@@ -3,16 +3,15 @@ import Card from './Card';
 import './Card.css';
 import './MediaDetails.css';
 
-function MediaDetails({ movie, handleBack, fullDetails, handleFullDetails }) {
+function MediaDetails({ movie, handleBack, selectedMedia }) {
   console.log(movie);
   function handleGoBack() {
-    handleFullDetails(false);
     handleBack(null);
   }
   return (
     <div className="movie-details-container">
       <div className="columns">
-        <Card poster={movie.poster_path} fullDetails={fullDetails} />
+        <Card poster={movie.poster_path} selectedMedia={selectedMedia} />
 
         <button onClick={handleGoBack}>Home</button>
       </div>

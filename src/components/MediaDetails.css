@@ -1,13 +1,9 @@
 .movie-details-container {
-  padding: 0px 0;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-
-/* .columns {
-  width: 100%;
-} */
 
 .release-date {
   font-size: 10px;

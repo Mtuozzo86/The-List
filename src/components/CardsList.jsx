@@ -7,8 +7,6 @@ function CardsList({ movies, handleSelected, handleFullDetails, fullDetails }) {
       poster={movie.poster_path}
       id={movie.id}
       handleSelected={handleSelected}
-      handleFullDetails={handleFullDetails}
-      fullDetails={fullDetails}
       key={movie.id}
     />
   ));
